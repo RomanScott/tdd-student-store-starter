@@ -14,3 +14,22 @@
   display: flex;
   flex-direction: column;
 }
+.product-quantity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  color: white;
+  width: 2em;
+  height: 2em;
+  border-radius: 0.5em;
+  background-color: hsl(0, 0%, 4%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-detail-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

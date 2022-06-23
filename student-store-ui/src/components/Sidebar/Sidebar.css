@@ -1,0 +1,10 @@
+.sidebar {
+    position: sticky;
+    display: inline-block;
+    vertical-align: top;
+    overflow-y: auto;
+    max-width: 400px;
+    top: 0;
+    bottom: 0;
+    padding: 30px;
+  }

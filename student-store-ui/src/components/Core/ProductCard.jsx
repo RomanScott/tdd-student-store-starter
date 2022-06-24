@@ -15,7 +15,7 @@ export default function ProductCard({
 
   return (
     <div className="product-card card">
-      {quantity && <div className="product-quantity is-info">{quantity}</div>}
+      {!!quantity && <div className="product-quantity is-info">{quantity}</div>}
       <div className="card-image">
         <figure className="image is-4by3">
           <Link to={"products/" + product.id}>
@@ -44,7 +44,7 @@ export default function ProductCard({
             <span className="icon is-small">
               <i
                 className="fas fa-cart-plus add"
-                onClick={handleAddItemToCart(productId)}
+                onClick={() => handleAddItemToCart(productId)}
               ></i>
             </span>
           </button>
@@ -52,7 +52,7 @@ export default function ProductCard({
             <span className="icon is-small">
               <i
                 className="fas fa-trash-alt remove"
-                onClick={handleRemoveItemToCart(productId)}
+                onClick={() => handleRemoveItemToCart(productId)}
               ></i>
             </span>
           </button>

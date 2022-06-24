@@ -5,6 +5,7 @@ import ProductGrid from "../Core/ProductGrid";
 
 export default function Home({
   products,
+  shoppingCart,
   handleAddItemToCart,
   handleRemoveItemToCart,
 }) {
@@ -14,6 +15,7 @@ export default function Home({
       <br />
       <ProductGrid
         products={products}
+        shoppingCart={shoppingCart}
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemToCart={handleRemoveItemToCart}
       />

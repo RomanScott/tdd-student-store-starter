@@ -11,13 +11,13 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 #### Core Features
 
 - [ ] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
-- [ ] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
-- [ ] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
-- [ ] User can search for products.
-- [ ] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
-- [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] User can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] User can click the '-' button on a product cart to increment that product in the shopping cart.
+- [x] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
+- [x] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
+- [x] User can search for products.
+- [x] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
+- [x] User can click to expand the shopping cart in the left navigation.
+- [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
+- [x] User can click the '-' button on a product cart to decrement that product in the shopping cart.
 - [ ] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] User can check out, and can view receipt upon completion.
 
@@ -61,21 +61,20 @@ The following specifications were met on the Express backend and the React front
   - [x] When the request completes successfully, it should store the `products` returned by the response in state.
   - [x] If the request does not complete successfully, or there are no `products` found in the response,
         it should create an error message and store it in the `error` state variable.
-- [ ] The `App.jsx` component should define handler functions to be passed as props to the `Home` and `ProductDetail` components.
-  - [ ] Define as many as are needed.
-  - [ ] At minimum, **create these five handlers**:
-    - [ ] The **`handleOnToggle`** function. When called...
-      - [ ] It should toggle the open/closed state of the `Sidebar`.
-    - [ ] The **`handleAddItemToCart`** function. When called...
-      - [ ] It should accept a single argument - `productId`
-      - [ ] It should add that product to the `shoppingCart` if it doesn't exist, and set its quantity to `1`.
-      - [ ] If it does exist, it should increase the quantity by `1`.
-      - [ ] It should add the price of the product to the total price of the `shoppingCart`.
-    - [ ] The **`handleRemoveItemFromCart`** function. When called...
-      - [ ] It should accept a single argument - `productId`
-      - [ ] It should decrease the quantity of the item in the `shoppingCart` by `1`, but only if it already exists.
-      - [ ] If it doesn't exist, the function should do nothing.
-      - [ ] If the new quantity is `0`, it should remove the item from the `shoppingCart`
+- [x] The `App.jsx` component should define handler functions to be passed as props to the `Home` and `ProductDetail` components.
+  - [x] Define as many as are needed.
+  - [x] At minimum, **create these five handlers**:
+    - [x] The **`handleOnToggle`** function. When called...
+      - [x] It should toggle the open/closed state of the `Sidebar`.
+    - [x] The **`handleAddItemToCart`** function. When called...
+      - [x] It should accept a single argument - `productId`
+      - [x] It should add that product to the `shoppingCart` if it doesn't exist, and set its quantity to `1`.
+      - [x] If it does exist, it should increase the quantity by `1`.
+    - [x] The **`handleRemoveItemFromCart`** function. When called...
+      - [x] It should accept a single argument - `productId`
+      - [x] It should decrease the quantity of the item in the `shoppingCart` by `1`, but only if it already exists.
+      - [x] If it doesn't exist, the function should do nothing.
+      - [x] If the new quantity is `0`, it should remove the item from the `shoppingCart`
     - [ ] The **`handleOnCheckoutFormChange`** function. When called...
       - [ ] It should receive two arguments:
         - [ ] `name` - the `name` attribute of the input being updated
@@ -170,8 +169,8 @@ The following specifications were met on the Express backend and the React front
 
 **Sidebar.jsx**
 
-- [ ] Should render JSX that is wrapped by a `section` element with the `className` of `sidebar`
-- [ ] Should accept **at least** the following props (and probably a few more):
+- [x] Should render JSX that is wrapped by a `section` element with the `className` of `sidebar`
+- [x] Should accept **at least** the following props (and probably a few more):
   - `isOpen` - boolean representing the open/closed state of the Sidebar
   - `shoppingCart` - the active user's cart formatted as an array of objects with `itemId` and `quantity` keys
   - `products` - the array of products fetched from the API
@@ -179,23 +178,23 @@ The following specifications were met on the Express backend and the React front
   - `handleOnCheckoutFormChange` - handler function to update the `checkoutForm` object
   - `handleOnSubmitCheckoutForm` - handler function to submit the user's order to the API
   - `handleOnToggle` - handler function to toggle open/closed `Sidebar` state
-- [ ] It should always render a `button` element with the `className` of `toggle-button`. When that button is clicked it should change the `isOpen` prop by calling the `handleOnToggle` prop.
-- [ ] When the sidebar is opened, it should display the `ShoppingCart` and `CheckoutForm` components and should be wider than `350px`.
-- [ ] When the sidebar is closed, it should only render the toggle button and shouldn't be wider than `150px`.
+- [x] It should always render a `button` element with the `className` of `toggle-button`. When that button is clicked it should change the `isOpen` prop by calling the `handleOnToggle` prop.
+- [x] When the sidebar is opened, it should display the `ShoppingCart` and `CheckoutForm` components and should be wider than `350px`.
+- [x] When the sidebar is closed, it should only render the toggle button and shouldn't be wider than `150px`.
 
 **ShoppingCart.jsx**
 
-- [ ] Should render JSX that is wrapped by a `div` element with the `className` of `shopping-cart`
-- [ ] Should accept **at least** the following props (and probably a few more):
+- [x] Should render JSX that is wrapped by a `div` element with the `className` of `shopping-cart`
+- [x] Should accept **at least** the following props (and probably a few more):
   - `isOpen` - boolean representing the open/closed state of the Sidebar
   - `products` - the array of products fetched from the API
   - `shoppingCart` - the active user's cart formatted as an array of objects with `itemId` and `quantity` keys
-- [ ] For every item in the `shoppingCart`:
-  - [ ] It should display the `name` of the item in an element with the `className` of `cart-product-name`. Remember that items in the `shoppingCart` prop will **only** contain the `itemId` and `quantity` fields. Other props will have to be used to conver the `itemId` field to the `product`'s name.
-  - [ ] It should display the `quantity` of the item in an element with the `className` of `cart-product-quantity`
-- [ ] It add up the cost of all items (make sure to use the quantity of the item requested), and render that amount **rounded up to exactly 2 decimal places** inside an element with the `className` of `subtotal`. Make sure it is prefixed with a dollar sign ($)!
-- [ ] It should calculate the cost of taxes on that subtotal (using 8.75% as the tax rate), add that amount to the subtotal, and render the total cost **rounded up to exactly 2 decimal places** inside an element with the `className` of `total-price`. Make sure it is prefixed with a dollar sign ($)!
-- [ ] If no items exist in the `shoppingCart`, it should render this message: `"No items added to cart yet. Start shopping now!"` inside an element with the `className` of `notification`
+- [x] For every item in the `shoppingCart`:
+  - [x] It should display the `name` of the item in an element with the `className` of `cart-product-name`. Remember that items in the `shoppingCart` prop will **only** contain the `itemId` and `quantity` fields. Other props will have to be used to conver the `itemId` field to the `product`'s name.
+  - [x] It should display the `quantity` of the item in an element with the `className` of `cart-product-quantity`
+- [x] It add up the cost of all items (make sure to use the quantity of the item requested), and render that amount **rounded up to exactly 2 decimal places** inside an element with the `className` of `subtotal`. Make sure it is prefixed with a dollar sign ($)!
+- [x] It should calculate the cost of taxes on that subtotal (using 8.75% as the tax rate), add that amount to the subtotal, and render the total cost **rounded up to exactly 2 decimal places** inside an element with the `className` of `total-price`. Make sure it is prefixed with a dollar sign ($)!
+- [x] If no items exist in the `shoppingCart`, it should render this message: `"No items added to cart yet. Start shopping now!"` inside an element with the `className` of `notification`
 
 **CheckoutForm.jsx**
 

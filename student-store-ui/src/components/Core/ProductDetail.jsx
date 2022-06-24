@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 export default function ProductDetail({
+  shoppingCart,
   handleAddItemToCart,
   handleRemoveItemToCart,
 }) {
@@ -42,7 +43,9 @@ export default function ProductDetail({
           <ProductCard
             product={product}
             productId={productId}
-            quantity={product.quantity}
+            quantity={
+              shoppingCart.find((p) => p.itemId === product.id)?.quantity
+            }
             showDescription={true}
             handleAddItemToCart={handleAddItemToCart}
             handleRemoveItemToCart={handleRemoveItemToCart}

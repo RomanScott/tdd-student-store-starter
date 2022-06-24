@@ -14,7 +14,7 @@ export default function App() {
   const [isFetching, setFetching] = useState(true);
   const [isOpen, setOpen] = useState(false);
   const [error, setError] = useState("");
-  const [shoppingCart, setShoppingCart] = useState([]); // {itemId: 1, quantity: 1}
+  const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutForm, setCheckoutForm] = useState({});
 
   useEffect(async () => {
@@ -32,11 +32,55 @@ export default function App() {
     }
   }, []);
 
+  function handleAddItemToCart(productId) {
+    const index = shoppingCart.findIndex(
+      (product) => product.itemId == productId
+    );
+
+    if (index == -1) {
+      setShoppingCart([...shoppingCart, { itemId: productId, quantity: 1 }]);
+    } else {
+      setShoppingCart(
+        shoppingCart.map((p) =>
+          p.itemId == productId ? { ...p, quantity: p.quantity + 1 } : p
+        )
+      );
+    }
+  }
+
+  function handleRemoveItemToCart(productId) {
+    const index = shoppingCart.findIndex(
+      (product) => product.itemId == productId
+    );
+
+    if (index != -1) {
+      setShoppingCart(
+        shoppingCart
+          .map((p) =>
+            p.itemId == productId ? { ...p, quantity: p.quantity - 1 } : p
+          )
+          .filter((p) => p.quantity > 0)
+      );
+    }
+  }
+
+  function handleOnCheckoutFormChange() {}
+
+  function handleOnSubmitCheckoutForm() {}
+
   return (
     <div className="app">
       <BrowserRouter>
-        <Sidebar />
-        <main>
+        <Sidebar
+          isOpen={isOpen}
+          shoppingCart={shoppingCart}
+          products={products}
+          checkoutForm={checkoutForm}
+          handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+          handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+          handleOnToggle={() => setOpen(!isOpen)}
+        />
+        <main style={{ marginLeft: "1em" }}>
           <Navbar />
           <Routes>
             <Route
@@ -47,8 +91,9 @@ export default function App() {
                 ) : (
                   <Home
                     products={products}
-                    handleAddItemToCart={() => {}}
-                    handleRemoveItemToCart={() => {}}
+                    shoppingCart={shoppingCart}
+                    handleAddItemToCart={handleAddItemToCart}
+                    handleRemoveItemToCart={handleRemoveItemToCart}
                   />
                 )
               }
@@ -57,8 +102,9 @@ export default function App() {
               path="/products/:productId"
               element={
                 <ProductDetail
-                  handleAddItemToCart={() => {}}
-                  handleRemoveItemToCart={() => {}}
+                  shoppingCart={shoppingCart}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemToCart={handleRemoveItemToCart}
                 />
               }
             />

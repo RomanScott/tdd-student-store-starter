@@ -51,24 +51,26 @@ export default function ShoppingCart({ isOpen, products, shoppingCart }) {
           </table>
 
           <table className="table is-fullwidth is-bordered">
-            <tr>
-              <td>
-                <b>Subtotal</b>
-              </td>
-              <td className="subtotal">{formatter.format(subtotal)}</td>
-            </tr>
-            <tr>
-              <td>
-                <b>Taxes</b>
-              </td>
-              <td>{formatter.format(taxes)}</td>
-            </tr>
-            <tr>
-              <td>
-                <b>Total</b>
-              </td>
-              <td className="total-price">{formatter.format(total)}</td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>
+                  <b>Subtotal</b>
+                </td>
+                <td className="subtotal">{formatter.format(subtotal)}</td>
+              </tr>
+              <tr>
+                <td>
+                  <b>Taxes</b>
+                </td>
+                <td>{formatter.format(taxes)}</td>
+              </tr>
+              <tr>
+                <td>
+                  <b>Total</b>
+                </td>
+                <td className="total-price">{formatter.format(total)}</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       ) : (

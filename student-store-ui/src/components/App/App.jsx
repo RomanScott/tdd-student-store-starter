@@ -15,7 +15,7 @@ export default function App() {
   const [isOpen, setOpen] = useState(false);
   const [error, setError] = useState("");
   const [shoppingCart, setShoppingCart] = useState([]);
-  const [checkoutForm, setCheckoutForm] = useState({});
+  const [checkoutForm, setCheckoutForm] = useState({ name: "", email: "" });
 
   useEffect(async () => {
     try {
@@ -64,7 +64,9 @@ export default function App() {
     }
   }
 
-  function handleOnCheckoutFormChange() {}
+  function handleOnCheckoutFormChange(e) {
+    setCheckoutForm({ ...checkoutForm, [e.target.name]: e.target.value });
+  }
 
   function handleOnSubmitCheckoutForm() {}
 

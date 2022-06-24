@@ -18,8 +18,8 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 - [x] User can click to expand the shopping cart in the left navigation.
 - [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] User can click the '-' button on a product cart to decrement that product in the shopping cart.
-- [ ] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] User can check out, and can view receipt upon completion.
+- [x] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [x] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
 
@@ -75,11 +75,11 @@ The following specifications were met on the Express backend and the React front
       - [x] It should decrease the quantity of the item in the `shoppingCart` by `1`, but only if it already exists.
       - [x] If it doesn't exist, the function should do nothing.
       - [x] If the new quantity is `0`, it should remove the item from the `shoppingCart`
-    - [ ] The **`handleOnCheckoutFormChange`** function. When called...
-      - [ ] It should receive two arguments:
-        - [ ] `name` - the `name` attribute of the input being updated
-        - [ ] `value` - the new value to set for that input
-      - [ ] It should update the `checkoutForm` object with the new value from the correct input(s)
+    - [x] The **`handleOnCheckoutFormChange`** function. When called...
+      - [x] It should receive two arguments:
+        - [x] `name` - the `name` attribute of the input being updated
+        - [x] `value` - the new value to set for that input
+      - [x] It should update the `checkoutForm` object with the new value from the correct input(s)
     - [ ] The **`handleOnSubmitCheckoutForm`** function. When called...
       - [ ] It should submit the user's order to the API
       - [ ] To submit the user's order, it should leverage the `axios.post` method to send a `POST` request to the `/store` endpoint.
@@ -198,30 +198,30 @@ The following specifications were met on the Express backend and the React front
 
 **CheckoutForm.jsx**
 
-- [ ] Should render JSX that is wrapped by a `div` element with the `className` of `checkout-form`
-- [ ] Should accept **at least** the following props:
+- [x] Should render JSX that is wrapped by a `div` element with the `className` of `checkout-form`
+- [x] Should accept **at least** the following props:
   - `isOpen` - boolean
   - `shoppingCart` - the active user's cart formatted as an array of objects with `itemId` and `quantity` keys
   - `checkoutForm` - the form state for the `CheckoutForm` component
   - `handleOnCheckoutFormChange` - handler function to update the `checkoutForm`
   - `handleOnSubmitCheckoutForm` - handler function to submit the user's order to the API
-- [ ] Should render two `input` elements, each with the `className` of `checkout-form-input`
-  - [ ] The `checkoutForm` prop should supply the correct props needed to create the two controlled inputs:
-    - [ ] The first input should have:
-      - [ ] the `type` prop set to `email`
-      - [ ] the `name` prop set to `email`
-      - [ ] the `placeholder` prop set to `student@codepath.org`
-      - [ ] the `value` prop set by `checkoutForm.email`.
-      - [ ] a valid `onChange` prop that uses the `handleOnCheckoutFormChange` function to update the `checkoutForm` state
-    - [ ] The second input should have:
-      - [ ] the `type` prop set to `text`
-      - [ ] the `name` prop set to `name`
-      - [ ] the `placeholder` prop set to `Student Name`
-      - [ ] the `value` prop set by `checkoutForm.name`.
-      - [ ] a valid `onChange` prop that uses the `handleOnCheckoutFormChange` function to update the `checkoutForm` state
-- [ ] Should render a `button` element with the `className` of `checkout-button`.
-  - [ ] It should contain the text `Checkout`.
-  - [ ] When clicked, it should call the `handleOnSubmit` function.
+- [x] Should render two `input` elements, each with the `className` of `checkout-form-input`
+  - [x] The `checkoutForm` prop should supply the correct props needed to create the two controlled inputs:
+    - [x] The first input should have:
+      - [x] the `type` prop set to `email`
+      - [x] the `name` prop set to `email`
+      - [x] the `placeholder` prop set to `student@codepath.org`
+      - [x] the `value` prop set by `checkoutForm.email`.
+      - [x] a valid `onChange` prop that uses the `handleOnCheckoutFormChange` function to update the `checkoutForm` state
+    - [x] The second input should have:
+      - [x] the `type` prop set to `text`
+      - [x] the `name` prop set to `name`
+      - [x] the `placeholder` prop set to `Student Name`
+      - [x] the `value` prop set by `checkoutForm.name`.
+      - [x] a valid `onChange` prop that uses the `handleOnCheckoutFormChange` function to update the `checkoutForm` state
+- [x] Should render a `button` element with the `className` of `checkout-button`.
+  - [x] It should contain the text `Checkout`.
+  - [x] When clicked, it should call the `handleOnSubmit` function.
     - [ ] If that request fails, the `CheckoutForm` component should display an error message inside an element with the `className` of `error`.
     - [ ] If the `POST` request is successful...
       - [ ] The `CheckoutForm` component should display a success message that contains the text `"Success!"` inside an element with the `className` of `success`.
@@ -287,8 +287,9 @@ Add your response here
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+https://bulma.io
+https://fontawesome.com
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Phineas Kibbey

@@ -30,12 +30,23 @@ export default function Sidebar({
 
       {isOpen && (
         <div>
+          <br />
           <ShoppingCart
             isOpen={isOpen}
             products={products}
             shoppingCart={shoppingCart}
           />
-          <CheckoutForm />
+          <br />
+          {shoppingCart.length > 0 && (
+            <CheckoutForm
+              isOpen={isOpen}
+              products={products}
+              shoppingCart={shoppingCart}
+              checkoutForm={checkoutForm}
+              handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+              handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+            />
+          )}
         </div>
       )}
     </section>

@@ -20,8 +20,7 @@ export default function App() {
   useEffect(async () => {
     try {
       setProducts(
-        (await axios.get("https://codepath-store-api.herokuapp.com/store")).data
-          .products
+        (await axios.get("http://localhost:3001/store")).data.products
       );
       setFetching(false);
     } catch (e) {
@@ -68,7 +67,25 @@ export default function App() {
     setCheckoutForm({ ...checkoutForm, [e.target.name]: e.target.value });
   }
 
-  function handleOnSubmitCheckoutForm() {}
+  async function handleOnSubmitCheckoutForm() {
+    try {
+      const {
+        purchase: { receipt },
+      } = (
+        await axios.post("http://localhost:3001/store", {
+          user: checkoutForm,
+          shoppingCart: shoppingCart,
+        })
+      ).data;
+
+      return receipt;
+    } catch {
+      return null;
+    } finally {
+      setShoppingCart([]);
+      setCheckoutForm({ name: "", email: "" });
+    }
+  }
 
   return (
     <div className="app">

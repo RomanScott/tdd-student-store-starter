@@ -18,7 +18,7 @@ export default function ProductDetail({
     try {
       const product = (
         await axios.get(
-          "https://codepath-store-api.herokuapp.com/store/" + productId
+          "http://localhost:3001/store/" + productId
         )
       ).data.product;
 

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import CheckoutForm from "./CheckoutForm";
 import ShoppingCart from "./ShoppingCart";
 import "./Sidebar.css";
@@ -12,6 +13,14 @@ export default function Sidebar({
   handleOnSubmitCheckoutForm,
   handleOnToggle,
 }) {
+  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState("");
+
+  async function submitForm() {
+    setStatus(await handleOnSubmitCheckoutForm());
+    setSubmitted(true);
+  }
+
   return (
     <section
       className="menu sidebar toggle-button"
@@ -44,8 +53,27 @@ export default function Sidebar({
               shoppingCart={shoppingCart}
               checkoutForm={checkoutForm}
               handleOnCheckoutFormChange={handleOnCheckoutFormChange}
-              handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+              handleOnSubmitCheckoutForm={submitForm}
             />
+          )}
+          {submitted && (
+            <div>
+              {!!status ? (
+                <div className="success">{status}</div>
+              ) : (
+                <div className="error">
+                  An error occurred while submitting your order. Please try
+                  again!
+                </div>
+              )}
+              <br />
+              <button
+                className="button is-link"
+                onClick={() => setSubmitted(false)}
+              >
+                Continue Shopping
+              </button>
+            </div>
           )}
         </div>
       )}

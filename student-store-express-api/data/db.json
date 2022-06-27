@@ -145,5 +145,24 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "Roman Scott",
+      "email": "romanscott@fb.com",
+      "order": [
+        {
+          "itemId": 13,
+          "quantity": 4
+        },
+        {
+          "itemId": 16,
+          "quantity": 2
+        }
+      ],
+      "total": "$2,479.48",
+      "createdAt": "6/27/2022",
+      "receipt": "Thank you Roman Scott for your order of 4 Copper Bracelet, 2 Smart Glasses for a total cost of $2,479.48. A copy of this receipt has been sent to romanscott@fb.com."
+    }
+  ]
 }

@@ -274,19 +274,20 @@ The following specifications were met on the Express backend and the React front
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+I believe the topics discussed in the labs prepared me to complete the assignment. I believe the Week 2 CodePath course was most helpful for me, as the React UI components were the main part of this assignment. React Hooks definitely sped up development time, especially utilizing useState() instead of modifying innerHTML. The features in the weekly assignment that I felt unprepared to complete had to do with the Express server (specifically with the model store).
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
-Add your response here
+If I had more time, I would have implemented more of the stretch features, specifically allowing users to view past orders (which would require having Express middleware for storing a user's browser session through cookies or SessionStorage). In addition, I would've added a mailing server so I could email the user's receipt to them.
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+The project demo went well because the UI looks very clean, it was responsive, and there is a lot of functionality. Something that i noticed that my peer did that I'd like to try next time was that he used TailwindCSS, rather than Bulma, as a library, and he was able to add animations and a lot more versatility to his project.
 
 ### Open-source libraries used
 
 https://bulma.io
+
 https://fontawesome.com
 
 ### Shout out
